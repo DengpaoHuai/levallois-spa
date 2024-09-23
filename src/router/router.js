@@ -1,10 +1,10 @@
-import HomeScreen from "../pages/HomeScreen";
-import NotFoundScreen from "../pages/NotFoundScreen";
-import PlanetsScreen from "../pages/PlanetsScreen";
+import HomeScreen from '../pages/HomeScreen';
+import NotFoundScreen from '../pages/NotFoundScreen';
+import PlanetsScreen from '../pages/PlanetsScreen';
 
 const routes = {
-  "/": HomeScreen,
-  "/planets": PlanetsScreen,
+  '/': HomeScreen,
+  '/planets': PlanetsScreen
 };
 
 const router = () => {
@@ -12,12 +12,12 @@ const router = () => {
   const page = routes[path];
 
   if (page) {
-    document.getElementById("app").innerHTML = page();
+    document.getElementById('app').innerHTML = page();
   } else {
-    document.getElementById("app").innerHTML = NotFoundScreen();
+    document.getElementById('app').innerHTML = NotFoundScreen();
   }
 };
 
 export default router;
 
-addEventListener("popstate", router);
+addEventListener('popstate', router);
